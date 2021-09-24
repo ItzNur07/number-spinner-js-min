@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Number Spinner</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- stylesheet -->
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Roboto', sans-serif;
+		}
+		body{
+			background:#193549;
+		}
+		.spinner{
+			position: absolute;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 50%;
+		}
+		.border{
+			width:250px;
+			height:100px;
+			border:4px solid #fff;
+			border-radius:50px;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+		.border span{
+			color: #fff;
+			font-weight:900;
+			font-size:1.7rem;
+		}
+		.border span:hover{
+			color:dodgerblue;
+		}
+		.border .count{
+			color: skyblue;
+			font-weight: bold;
+			font-size: 3rem;
+		}
+		.spinner h2{
+			position: absolute;
+			font-size: 10rem;
+			z-index: -1;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 50%;
+			color:gray;
+			opacity:.2;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="spinner">
+		<h2>NUMBER <br> SPINNER</h2>
+		<div class="border">
+			<span class="dec"><i class="fas fa-chevron-left"></i></span>
+			<span class="count">0</span>
+			<span class="inc"><i class="fas fa-chevron-right"></i></span>
+		</div>
+	</div>
+
+	<script>
+		
+		let dec = document.querySelector('.dec');
+		let show = document.querySelector('.count');
+		let inc = document.querySelector('.inc');
+		let count = 0;
+
+		dec.addEventListener('click' , () => {
+			count--;
+			show.innerText = count;
+		})
+		inc.addEventListener('click' , () => {
+			count++;
+			show.innerText = count;
+		})
+	</script>
+</body>
+</html>
